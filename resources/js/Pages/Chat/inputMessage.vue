@@ -33,15 +33,15 @@ import axios from 'axios';
                     return;
                 }
 
-                axios.post('/chat/room/' + this.room.id + '/message', {
+                axios.post('/chat/rooms/' + this.room.id + '/messages', {
                     message: this.message
                 })
 
-                .then( response => {
-                    if (response.status == 201) {
+                .then( () => {
+                        this.$emit('messagesent');
                         this.message = '';
-                        this.$emit('messagesent')
-                    }
+
+                    
                 })
                 .catch(error => {
                     console.log( error );

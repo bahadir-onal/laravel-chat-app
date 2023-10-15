@@ -9,7 +9,7 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <message-container />
+                    <message-container :messages="messages" />
                     <input-message 
                         :room="currentRoom"
                         @messagesent="getMessages" />
@@ -46,7 +46,7 @@ export default {
             axios.get('/chat/rooms')
             .then( response => {
                 this.chatRooms = response.data; 
-                this.setRooms ( response.data[0] );
+                this.setRoom ( response.data[0] );
             })
             .catch( error => {
                 console.log( error );
@@ -59,7 +59,7 @@ export default {
         },
 
         getMessages(){
-            axios.get('/chat/room/' + this.currentRoom.id + '/messages')
+            axios.get('/chat/rooms/' + this.currentRoom.id + '/messages')
             .then(response => {
                 this.messages = response.data;
             })
