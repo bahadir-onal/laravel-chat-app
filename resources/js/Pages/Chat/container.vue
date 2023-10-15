@@ -2,7 +2,12 @@
     <AppLayout title="Dashboard">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Chat
+                <chat-room-selection
+                    v-if="currentRoom.id"
+                    :rooms="chatRooms"
+                    :currentRoom="currentRoom"
+                    v-on:roomchanged="setRoom( $event )"
+                />
             </h2>
         </template>
 
@@ -24,13 +29,15 @@
 import AppLayout from '@/Layouts/AppLayout.vue';
 import MessageContainer from './messageContainer.vue';
 import InputMessage from './inputMessage.vue';
+import chatRoomSelection from './chatRoomSelection.vue';
 import axios from 'axios';
 
 export default {
     components: {
         AppLayout,
         MessageContainer,
-        InputMessage
+        InputMessage,
+        chatRoomSelection
     },
 
     data: function () {
