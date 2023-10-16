@@ -30,9 +30,13 @@ Bu proje, iki kişinin gerçek zamanlı olarak birbirlerine mesaj göndermesine 
 # Pusher ayarlarını düzenleyin. `.env` dosyanızdaki aşağıdaki satırları düzenleyin ve Pusher kimlik bilgilerinizi ekleyin:
 
 `BROADCAST_DRIVER=pusher`
+
 `PUSHER_APP_ID=your-app-id`
+
 `PUSHER_APP_KEY=your-app-key`
+
 `PUSHER_APP_SECRET=your-app-secret`
+
 `PUSHER_APP_CLUSTER=your-app-cluster`
 
 # Projeyi çalıştırın
@@ -81,9 +85,13 @@ This project uses the following technologies:
 
 # Configure Pusher settings. Edit the following lines in your `.env` file and add your Pusher credentials:
 `BROADCAST_DRIVER=pusher`
+
 `PUSHER_APP_ID=your-app-id`
+
 `PUSHER_APP_KEY=your-app-key`
+
 `PUSHER_APP_SECRET=your-app-secret`
+
 `PUSHER_APP_CLUSTER=your-app-cluster`
 
 # Run the Project
